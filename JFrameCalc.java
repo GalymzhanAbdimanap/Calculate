@@ -246,7 +246,12 @@ public class JFrameCalc extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				a = Integer.parseInt(tf.getText());
-				tf.setText("");
+				int g=1;
+				for(int i=1;i<=a; i++) {
+					g*=i;
+				}
+				
+				tf.setText(""+g);
 				c = '!';
 			}
 		});
@@ -256,7 +261,8 @@ public class JFrameCalc extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				a = Integer.parseInt(tf.getText());
-				tf.setText("");
+				double g=Math.sqrt(a);
+				tf.setText(""+(int)g);
 				c = 's';
 			}
 		});
@@ -266,7 +272,8 @@ public class JFrameCalc extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				a = Integer.parseInt(tf.getText());
-				tf.setText("");
+				a=a*a;
+				tf.setText(""+a);
 				c = 'k';
 			}
 		});
@@ -288,7 +295,7 @@ public class JFrameCalc extends JFrame{
 				// TODO Auto-generated method stub
 				a = Integer.parseInt(tf.getText());
 				tf.setText("");
-				c = ' ';
+				
 			}
 		});
 		
@@ -299,7 +306,7 @@ public class JFrameCalc extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if(c=='+' || c=='-' || c=='*' || c=='/' || c=='^' ) {
+				
 				b = Integer.parseInt(tf.getText());
 				if(c=='+')
 					tf.setText((int)obj.plus(a, b)+"");
@@ -311,20 +318,6 @@ public class JFrameCalc extends JFrame{
 					tf.setText((int)obj.bolu(a, b)+"");
 				if(c=='^')
 					tf.setText((int)obj.stepen(a, b)+"");
-				c=' ';
-				a=0;
-				b=0;
-				}	
-				
-				//if(c=='P')
-					//tf.setText((int)obj.plus_minus(a)+"");
-				if(c=='!')
-					tf.setText((int)obj.fac(a)+"");
-				if(c=='s')
-					tf.setText((int)obj.koren(a)+"");
-				if(c=='k')
-					tf.setText((int)obj.square(a)+"");
-			
 				c=' ';
 				a=0;
 				b=0;
